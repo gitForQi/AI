@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI小说写作助手</title>
+    <!-- Element Plus CSS -->
+    <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% block content %}{% endblock %}
+    <!-- Vue 3 -->
+    <script src="//unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Element Plus -->
+    <script src="//unpkg.com/element-plus"></script>
+    <!-- Element Plus 图标 -->
+    <script src="//unpkg.com/@element-plus/icons-vue"></script>
+    <!-- 语言包 -->
+    <script src="//unpkg.com/element-plus/dist/locale/zh-cn.min.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html> 

@@ -1,0 +1,329 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* 应用容器 */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 240px;
+    background-color: #545c64;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.sidebar-nav {
+    padding: 20px 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.sidebar-nav .nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav .nav-item i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* 主内容区域 */
+.main-content {
+    flex: 1;
+    margin-left: 240px;
+    padding: 20px;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+}
+
+/* 欢迎页面样式 */
+.welcome-content {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.welcome-content h1 {
+    font-size: 2rem;
+    color: #409EFF;
+    margin-bottom: 20px;
+}
+
+.welcome-content p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* 聊天容器适配新布局 */
+.chat-container {
+    height: calc(100vh - 40px);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* 系统设置页面适配新布局 */
+.system-settings {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #409EFF;
+}
+
+.system-settings h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #409EFF;
+}
+
+.el-form-item {
+    margin-bottom: 25px;
+}
+
+.model-section {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.model-actions {
+    white-space: nowrap;
+}
+
+.model-description {
+    color: #999;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.el-table {
+    margin-top: 10px;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f5f7fa;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    scroll-behavior: smooth;
+}
+
+.message {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.message.user {
+    align-items: flex-end;
+}
+
+.message-content {
+    max-width: 70%;
+    padding: 12px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.user .message-content {
+    background: #409EFF;
+    color: white;
+}
+
+.assistant .message-content {
+    background: white;
+    color: #333;
+    border: 1px solid #dcdfe6;
+}
+
+.message-text {
+    word-break: break-word;
+    line-height: 1.5;
+}
+
+.message-time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.user .message-time {
+    color: #e8f3ff;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input .el-textarea {
+    flex: 1;
+}
+
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 4px 8px;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: #666;
+    border-radius: 50%;
+    animation: typing 1s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: 0.2s; }
+.typing-indicator span:nth-child(2) { animation-delay: 0.3s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 大纲生成器样式 */
+.outline-container {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.outline-container h2 {
+    text-align: center;
+    color: #409EFF;
+    margin-bottom: 30px;
+}
+
+.outline-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #409EFF;
+    margin: 30px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ebeef5;
+}
+
+.character-item, .conflict-item {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.character-actions, .conflict-actions {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.generated-outline {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.outline-content {
+    white-space: pre-wrap;
+    line-height: 1.6;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.outline-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+} 

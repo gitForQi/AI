@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="app-container">
+    <!-- 左侧导航栏 -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>AI小说写作助手</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="{{ url_for('views.chat') }}" class="nav-item">
+                        <i class="el-icon-chat-dot-round"></i>
+                        <span>AI助手</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('views.outline') }}" class="nav-item">
+                        <i class="el-icon-document"></i>
+                        <span>小说大纲</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('views.settings') }}" class="nav-item">
+                        <i class="el-icon-setting"></i>
+                        <span>系统设置</span>
+                    </a>
+                </li>
+                <!-- 后续可以在这里添加更多导航项 -->
+            </ul>
+        </nav>
+    </div>
+
+    <!-- 主内容区 -->
+    <div class="main-content">
+        {% block main_content %}
+        <div class="welcome-content">
+            <h1>欢迎使用 AI小说写作助手</h1>
+            <p>请从左侧选择功能开始使用</p>
+        </div>
+        {% endblock %}
+    </div>
+</div>
+{% endblock %} 
